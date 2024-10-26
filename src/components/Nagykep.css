@@ -1,0 +1,4 @@
+.nagykep {
+    display:grid;
+    grid-template-columns: 30px auto 30px;
+}

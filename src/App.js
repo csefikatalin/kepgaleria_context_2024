@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NagyKep from './components/NagyKep';
+import KisKepek from './components/KisKepek';
+import { useContext } from 'react';
+import { KepContext } from './context/KepContext';
 
 function App() {
+  const {lista,index} =useContext(KepContext)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <h1>Képgaléria</h1>
       </header>
+      <article>
+        <section><NagyKep kep={lista[index]}/></section>
+
+        <section className='kiskepek'><KisKepek lista={lista}/></section>
+      </article>
     </div>
   );
 }
